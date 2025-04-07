@@ -1,0 +1,13 @@
+services:
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: server
+    privileged: true
+    command: /sbin/init
+    ports:
+      - 8080:8080
+      - 20022:20022
+    volumes:
+      - ./webapps:/usr/local/tomcat/webapps
